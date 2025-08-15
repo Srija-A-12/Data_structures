@@ -1,0 +1,11 @@
+class Solution {
+    public boolean isPowerOfFour(int n) {
+        return power(n,1);
+    }
+    public boolean power(int n,int sum){
+        if(sum==n) return true;
+        if(sum>n || sum>Integer.MAX_VALUE/2) return false;
+
+        return power(n,sum*4);
+    }
+}
