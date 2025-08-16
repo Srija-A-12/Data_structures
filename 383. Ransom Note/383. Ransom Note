@@ -1,0 +1,17 @@
+class Solution {
+    public boolean canConstruct(String ransomNote, String magazine) {
+     if(magazine.length() < ransomNote.length()) return false;
+     int[] count=new int[26];
+
+     for(int n:magazine.toCharArray()){
+        count[n -'a']++;
+     }
+
+     for(int n:ransomNote.toCharArray()){
+        count[n-'a']--;
+        if(count[n-'a']<0) return false;
+     }
+
+    return true;
+    }
+}
